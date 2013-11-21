@@ -1,0 +1,72 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+homepage:
+  url:   /
+  param: { module: sfGuardAuth, action: signin }
+
+main:
+  url:   /main
+  param: { module: main, action: index }
+
+sfGuardUser:
+  class:   sfDoctrineRouteCollection
+  options: { model: sfGuardUser }
+  
+user:
+  class:   sfDoctrineRouteCollection
+  options: { model: sfGuardUser }
+  
+productionLine:
+  class:   sfDoctrineRouteCollection
+  options: { model: ProductionLine }
+  
+product:
+  class:   sfDoctrineRouteCollection
+  options: { model: Product }
+
+productLineProduct:
+  class:   sfDoctrineRouteCollection
+  options: { model: ProductLineProduct }
+
+productionOrder:
+  class:   sfDoctrineRouteCollection
+  options: { model: ProductionOrder }
+
+productionItem:
+  class:   sfDoctrineRouteCollection
+  options: { model: ProductionItem }
+
+company:
+  class:   sfDoctrineRouteCollection
+  options: { model: Company }
+
+categoryType:
+  class:   sfDoctrineRouteCollection
+  options: { model: CategoryType }
+
+category:
+  class:   sfDoctrineRouteCollection
+  options: { model: Category }
+
+state:
+  class:   sfDoctrineRouteCollection
+  options: { model: State }
+  
+  
+#sfGuardAuth
+sf_guard_signin:
+  url:   /
+  class: sfRequestRoute
+  param: { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:   /salir
+  class: sfRequestRoute
+  param: { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:   /recuperar-password
+  class: sfRequestRoute
+  param: { module: sfGuardAuth, action: password }

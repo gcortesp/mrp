@@ -1,0 +1,12 @@
+Operator:
+  User_operator:
+    rut:            13829041-7
+    first_name:     Gabriel
+    last_name:      Cortes
+    email_address:  operator@eMrp.com
+    username:       operator
+    password:       operator
+    address:        address operator
+    mobile:         2134567
+    phone:          345678    
+    Groups:         [Group_operator]

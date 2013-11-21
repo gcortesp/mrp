@@ -1,0 +1,157 @@
+ProductionLine:
+  ProductionLine_uno:
+    codigo: BLOMAX-8
+    name: SIG Blomax-8
+    model: Blomax-8
+    Company: Company_Plasco
+    Area: Area_Soplado
+  Blomax-14:
+    codigo: BLOMAX-14
+    name: SIG Blomax-14
+    model: BLOMAX-14
+    Company: Company_Plasco
+    Area: Area_Soplado
+  Blomax-10:
+    codigo: BLOMAX-10
+    name: SIG Blomax-10
+    model: BLOMAX-10
+    Company: Company_Plasco
+    Area: Area_Soplado
+  Blomax-6:
+    codigo: BLOMAX-6
+    name: SIG Blomax-6
+    model: BLOMAX-6
+    Company: Company_Plasco
+    Area: Area_Soplado
+  Blomax-66:
+    codigo: BLOMAX-66
+    name: SIG Blomax-66
+    model: BLOMAX-66
+    Company: Company_Plasco
+    Area: Area_Soplado
+  SBO-18:
+    codigo: SBO-18
+    name: Sidel SBO-18
+    model: SBO-18
+    Company: Company_Plasco
+    Area: Area_Soplado
+  Hypet225:
+    codigo: HyPet-225
+    name: Husky HyPet-225
+    model: HyPet-225
+    Company: Company_Plasco
+    Area: Area_Inyeccion
+  Hypet280:
+    codigo: hypet-280
+    name: Husky HyPet-280
+    model: HyPet-280
+    Company: Company_Plasco
+    Area: Area_Inyeccion
+  GL-300:
+    codigo: GL-300
+    name: Husky GL-300
+    model: GL-300
+    Company: Company_Plasco
+    Area: Area_Inyeccion
+  GL-300II:
+    codigo: GL-300II
+    name: Husky GL-300II
+    model: GL-300II
+    Company: Company_Plasco
+    Area: Area_Inyeccion
+
+Product:
+  Product_uno:
+    codigo: 13001
+    name: BOTELLA 3.0lts. VERDE
+    ProductFamily: Elaborados
+    UnitMeasure: CU
+  Product_dos:
+    codigo: 13002
+    name: BOTELLA 2.0lts. CLEAR
+    ProductFamily: Elaborados
+    UnitMeasure: CU
+  Product_tres:
+    codigo: 13003
+    name: BOTELLA 1.0lts. CLEAR
+    ProductFamily: Elaborados
+    UnitMeasure: CU
+
+UnitMeasure:
+  CU:
+    name: CU
+  Gramo:
+    name: GRAMO
+
+ProductFamily:
+  Elaborados:
+    name: ELABORADOS
+  SemiElaborados:
+    name: SEMI-ELABORADOS
+  MateriaPrima:
+    name: MATERIA-PRIMA
+
+ProductLineProduct:
+  ProductionLine_uno_Product_uno:
+    operational_rate: 3000
+    ProductionLine: ProductionLine_uno
+    Product: Product_uno
+  SBO-18_Product_dos:
+    operational_rate: 1500
+    ProductionLine: SBO-18
+    Product: Product_dos
+
+ProductionOrder:
+  ProductionOrder_uno:
+    code: 123asd45
+    quantity: 100
+    start_date: 10
+    start_time: 15
+    end_date: 12
+    end_time: 12
+    State: State_trabajando
+    ProductionLine: Blomax-14
+    Product: Product_dos
+#    ProductLineProduct: ProductionLine_uno_Product_uno
+
+ProductionItem:
+  ProductionItem_uno:
+    quantity: 50
+    produced: 48
+    lost: 2
+    ProductionOrder: ProductionOrder_uno
+
+Area:
+  Area_Inyeccion:
+    codigo: INY
+    name: INYECCIÓN
+  Area_Soplado:
+    codigo: SOP
+    name: SOPLADO
+    
+Company:
+  Company_Plasco:
+    name: Plasco S.A.
+    rut: 20.321.456-7
+    address: Alberto Pepper 1551
+    city: Santiago
+    country: Chile
+    phone: 123456
+    mail: plasco@plasco.com
+    
+#CategoryType:
+#  CategoryType_producto:
+#    name: Productos
+#
+#Category:
+#  Category_mesas:
+#    name: Mesa
+#    CategoryType: CategoryType_producto
+    
+State:
+  State_liberado:
+    name: LIBERADA
+  State_trabajando:
+    name: EN CURSO
+  State_cerrada:
+    name: CERRADA

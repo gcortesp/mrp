@@ -1,0 +1,117 @@
+Operator:
+  inheritance: { extends: sfGuardUser, type: column_aggregation }
+  columns:
+    rut: { type: string(15) }
+    address: { type: string(50) }
+    mobile: { type: string(10) }
+    phone: { type: string(10) }
+
+Area:
+  tableName: area
+  columns:
+    area_id: {type: integer}
+    codigo: {type: string(255)}
+    name: {type: string(255)}
+
+ProductionLine:
+  tableName: production_line
+  columns:
+    company_id: { type: integer }
+    area_id: { type: integer }
+    codigo: {type: string(255}
+    name: { type: string(255), notnull: true }
+    model: { type: string(255) }
+  relations:
+    Company: { local: company_id, foreign: id }
+    Area: {local: area_id, foreign: id}
+    ProductLineProduct: { type: many, class: ProductLineProduct, local: id, foreign: product_id, cascade: [delete] }
+
+ProductFamily:
+  tableName: product_family
+  columns:
+    name: {type: string(255)}
+
+Product:
+  tableName: product
+  columns:
+    family_id: {type: integer, notnull:true}
+    unit_measure_id: {type: integer, notnull:true}
+    codigo: {type: string(255), notnull: true}
+    name: { type: string(50), notnull: true }
+    active: { type: boolean, default: true }
+  relations:
+    UnitMeasure: {local: unit_measure_id, foreign: id}
+    ProductFamily: {local: family_id, foreign: id}
+    ProductLineProduct: { type: many, class: ProductLineProduct, local: id, foreign: production_line_id, cascade: [delete] }
+
+ProductLineProduct:
+  tableName: product_line_product
+  columns:
+    product_id: { type: integer }
+    production_line_id: { type: integer }
+    operational_rate: { type: integer, notnull: true }
+  relations:
+    ProductionLine: { local: production_line_id, foreign: id }
+    Product: { local: product_id, foreign: id }
+
+ProductionOrder:
+  tableName: production_order
+  columns:
+    production_line_id: {type: integer, notnull: true}
+    product_id: {type: integer, notnull: true}
+    state_id: { type: integer }
+    code: { type: integer }
+    quantity: { type: integer }
+    start_date: { type: integer }
+    start_time: { type: integer }
+    end_date: { type: integer }
+    end_time: { type: integer }
+  relations:
+    State: { local: state_id, foreign: id }
+    ProductionLine: {local: production_line_id, foreign: id}
+    Product: {local: product_id, foreign: id}
+#    ProductLineProduct: { local: product_line_product_id, foreign: id }
+
+ProductionItem:
+  tableName: production_item
+  columns:
+    production_order_id: { type: integer }
+    quantity: { type: integer }
+    produced: { type: integer }
+    lost: { type: integer }
+  relations:
+    ProductionOrder: { local: production_order_id, foreign: id }
+
+Company:
+  tableName: company
+  columns:
+    name: { type: string(255), notnull: true }
+    rut: { type: string(15), notnull: true }
+    address: { type: string(100) }
+    city: { type: string(10) }
+    country: { type: string(10) }
+    phone: { type: string(15) }
+    mail: { type: string(50) }
+
+#CategoryType:
+#  tableName: category_type
+#  columns:
+#    name: { type: string(255), notnull: true }
+#
+#Category:
+#  tableName: category
+#  columns:
+#    category_type_id: { type: integer }
+#    name: { type: string(255), notnull: true }
+#  relations:
+#    CategoryType: { local: category_type_id, foreign: id }
+
+State:
+  tableName: state
+  columns:
+    name: { type: string(255), notnull: true }
+
+UnitMeasure:
+  tableName: unit_measure
+  columns:
+    name: {type: string(255)}

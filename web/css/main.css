@@ -1,0 +1,47 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+margin:0;
+padding:0;
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+font-size: 11px;
+}
+.fleft { float:left; }
+.fright { float:right; }
+.clear{clear: both}
+.round-2 { border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; }
+.round-5 { border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; }
+.round-5_top { -webkit-border-top-left-radius: 5px; -webkit-border-top-right-radius: 5px;  }
+.round-10 { border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -khtml-border-radius: 10px; }
+.round-20 { border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -khtml-border-radius: 20px; }
+.img_logo{background: url('../images/logo.jpg') no-repeat; width: 200px; height: 70px}
+#header{position: absolute; background: url("../images/bg.png") repeat-x; width: 100%; height: 75px; -webkit-box-shadow: 0 0 25px #ccc;
+box-shadow: 0 0 25px #ccc;}
+.top_bar{height: 15px; background-color: #000000}
+.top_menu_container{margin: auto; width: 1040px; height: 75px;}
+.top_menu{position: relative; top: 5px; height: 20px; display: inline-block;}
+    .top_menu ul{margin: 0; padding: 0; list-style: none}
+            .top_menu ul li{display: block; position: relative; float: left; border-right: 1px solid; color: #666}
+                .top_menu ul li a{display: block; text-decoration: none; padding: 0 10px; margin-left: 1px; white-space: nowrap; color: #FFFFFF;}
+.top_menu .welcome{padding: 0 10px; color: #000000}
+#footer{margin: auto; width: 100%; text-align: center; height: 45px;}
+#sidebar{margin: auto; width: 1040px; }
+.add_button{width: 100px; height: 18px; cursor: pointer; border: 1px solid #D4D4D4; margin: 10px 20px 0 0; background-color: #F2F2F2; text-align: center; padding-top: 2px}
+    .add_button:hover{background-color: #D4D4D4}
+.main_menu{
+    width: 820px;
+    height: 30px;
+    border-top: 1px solid #E3E4E6;
+    border-left: 1px solid #E3E4E6;
+    border-right: 1px solid #E3E4E6;
+    border-bottom: 1px solid #E3E4E6;
+    margin-top: 8px;
+    background-color: #E8E8E8;
+}
+.main_menu ul{margin: 0; padding: 0; list-style: none}
+    .main_menu ul li{display: block; position: relative; float: left; border-right: 1px solid; color: #666}
+        .main_menu ul  a{display: block; text-decoration: none; padding: 0 10px; margin-left: 1px; white-space: nowrap; color: #666;}
+.content{margin: 10px auto; width: 1040px; height: 630px; border: 1px solid #ccc; -webkit-box-shadow: 0 25px 25px #ccc}
+.page_title{width: 880px; height: 40px; margin: 10px 0 0 -15px; background: url("../images/label.png")no-repeat}
+    .page_title h1{font-size: 15px; color: #5D6063; margin: 3px 0 0 25px}
+.main_content{margin: 0 20px 0 20px}
+#navigation{margin-top: 8px;}
+table tbody tr td{text-align: center}

@@ -1,0 +1,43 @@
+sfGuardUser:
+  User_admin:
+    email_address:  support@eMrp.com
+    username:       admin
+    password:       admin
+    is_super_admin: true
+    Groups:         [Group_admin]  
+  User_planner:
+    rut:            22.222.222-2
+    first_name:     planner name 
+    last_name:      planner lastname
+    email_address:  planner@eMrp.com
+    username:       planner
+    password:       planner
+    address:        address planner
+    mobile:         78945612
+    phone:          8765432  
+    Groups:         [Group_planner]
+
+sfGuardGroup:
+  Group_admin:
+    name:           admin
+    description:    Administrator group
+    Permissions:    [Permission_admin, Permission_operator, Permission_planner]
+  Group_operator:
+    name:           operator
+    description:    operator group
+    Permissions:    [Permission_operator]
+  Group_planner:
+    name:           planner
+    description:    planner group
+    Permissions:    [Permission_planner]
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin
+    description:    Administrator permission
+  Permission_operator:
+    name:           operator
+    description:    Operator permission
+  Permission_planner:
+    name:           planner
+    description:    Planner permission
